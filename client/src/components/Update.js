@@ -1,17 +1,20 @@
 import { useState } from 'react';
-import { UpdateEmp } from '../Service/Service';
+import { UpdateEmp } from '../Service/Service.js';
 import { Link } from 'react-router-dom';
 
 export function Update(id) {
     const [emp, setemp] = useState({});
-    const [update, setupdate] = useState(false);
+    const [isupdate, setisupdate] = useState(false);
+
     const handleChange = (e) => {
         setemp({ ...emp, [e.target.name]: e.target.value });
     }
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        UpdateEmp(id, emp);
-        setupdate(true);
+        const res=await UpdateEmp(id,emp);
+        setisupdate(true);
+        console.log(res);
     }
     return (
         <>

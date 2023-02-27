@@ -37,7 +37,7 @@ export default class Navbar extends Component {
                             </ul>
                             <form className="d-flex" onSubmit={this.handleSubmit}>
                                 <input className="form-control me-2" onChange={this.handleChange} type="search" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-outline-success" type="submit">Search</button>
+                                <button className="btn btn-outline-success" onClick={() => { FindByName(this.state.name) }} type="submit">Search</button>
                             </form>
                         </div>
                     </div>
