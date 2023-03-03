@@ -1,21 +1,25 @@
 import axios from 'axios';
 
-export function Insert(data){
-    return axios.post('http://localhost:4800/employee',data);
+export function Insert(data) {
+    return axios.post('http://localhost:4800/employee', data);
 }
 
-export function Find(){
+export function Find() {
     return axios.get('http://localhost:4800/employee');
 }
 
-export function FindByName(name){
-    return axios.get('http://localhost:4800/employee/'+name);
+export async function FindByName(name) {
+    return await axios.get('http://localhost:4800/employee/' + name);
 }
 
-export function UpdateEmp(id,data){
-    return axios.put('http://localhost:4800/employee/'+id,data);
+export async function UpdateEmployee(id, data) {
+    const res = 'http://127.0.0.1:4800/employee/' + id;
+    // console.log("updated");
+    // console.log(id);
+    // console.log(res);
+    return await axios.put(res, data);
 }
 
-export function Delete(id){
-    return axios.delete('http://localhost:4800/employee/'+id);
+export async function Delete(id) {
+    return await axios.delete('http://localhost:4800/employee/' + id);
 }
