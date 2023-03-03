@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Find, Delete } from '../Service/Service.js';
 // import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
-import CreateIcon from "@mui/icons-material/Create";
+// import CreateIcon from "@mui/icons-material/Create";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 // import Info from './Info.js';
-import { Update } from './Update.js';
+// import { Update } from './Update.js';
 
 export default class Home extends Component {
   constructor() {
@@ -61,9 +61,9 @@ export default class Home extends Component {
                           <Link>
                             <button className="btn btn-danger" onClick={() => { Delete(e._id) }}><DeleteOutlineIcon /></button>
                           </Link>
-                          <Link to="/update">
+                          {/* <Link to="/update">
                             <button className="btn btn-primary" onClick={() => {Update(e._id)}}><CreateIcon /></button>
-                          </Link>
+                          </Link> */}
                           
                         </td>
                       </tr>
